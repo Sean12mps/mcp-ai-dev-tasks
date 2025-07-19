@@ -1,0 +1,28 @@
+{
+  "name": "ai-dev-tasks",
+  "version": "1.0.0",
+  "description": "A simple MCP tool that reads create-prd.md and appends strings. Uses only Node.js standard library modules.",
+  "main": "index.js",
+  "bin": {
+    "ai-dev-tasks": "./index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "development",
+    "tools"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+} 
