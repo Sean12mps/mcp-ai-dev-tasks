@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 // Create server instance
 const server = new McpServer({
   name: "mcp-ai-dev-tasks",
-  version: "1.0.3",
+  version: "1.0.4",
   capabilities: {
     resources: {},
     tools: {},
