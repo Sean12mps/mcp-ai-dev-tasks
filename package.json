@@ -1,28 +1,32 @@
 {
-  "name": "ai-dev-tasks",
-  "version": "1.0.0",
-  "description": "A simple MCP tool that reads create-prd.md and appends strings. Uses only Node.js standard library modules.",
+  "name": "@sean12mps/mcp-ai-dev-tasks",
+  "version": "1.0.3",
   "main": "index.js",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
-    "ai-dev-tasks": "./index.js"
+    "mcp-ai-dev-tasks": "./build/index.js"
   },
   "scripts": {
-    "test": "jest",
-    "start": "node index.js"
+    "build": "tsc && mkdir -p build/instructions-template && cp -r src/instructions-template/*.md build/instructions-template/ 2>/dev/null || true && echo '#!/usr/bin/env node' > build/index.js.tmp && cat build/index.js >> build/index.js.tmp && mv build/index.js.tmp build/index.js && chmod 755 build/index.js",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
-  "keywords": [
-    "mcp",
-    "model-context-protocol",
-    "ai",
-    "development",
-    "tools"
+  "files": [
+    "build"
   ],
+  "keywords": [],
   "author": "",
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "jest": "^29.0.0"
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3"
   }
-} 
+}

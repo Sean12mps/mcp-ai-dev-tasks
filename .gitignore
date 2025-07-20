@@ -28,6 +28,7 @@ bower_components
 
 # Compiled binary addons
 build/Release
+build/
 
 # Dependency directories
 jspm_packages/
